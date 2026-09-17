@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TechAlerta | Dashboard operacional</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="dashboard.css">
+  <link rel="stylesheet" href="operations.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="../solucao/index.html" aria-label="Ir para o Tech Apex"><span class="brand-mark">T</span><span>TECHALERTA <small>OPERATIONAL DASHBOARD</small></span></a>
+    <span class="eyebrow">TECHALERTA / DIAGNÓSTICO</span>
+    <a class="switch-link" href="solucao/index2.html">Ver o Tech Apex <span>↗</span></a>
+  </header>
+
+  <main class="dashboard-shell">
+    <aside class="sidebar">
+      <div class="side-label">CENTRAL DE COMANDO</div>
+      <nav aria-label="Navegação do dashboard">
+        <a class="active" href="#visao-geral"><span>◈</span> Visão geral</a>
+        <a href="#alertas"><span>!</span> Alertas <b>04</b></a>
+        <a href="#ocupacao"><span>▦</span> Ocupação</a>
+        <a href="#layout"><span>⌗</span> Gestão de layout</a>
+        <a href="#arsenal"><span>⌘</span> Arsenal tecnológico</a>
+        <a href="#previsao"><span>⌁</span> Previsão e giro</a>
+        <a href="#matriz"><span>✣</span> Matriz de ataque</a>
+      </nav>
+      <div class="sidebar-foot"><span class="pulse"></span><span>MONITORAMENTO ATIVO</span><small>Última leitura<br>Hoje, 09:42:18</small></div>
+    </aside>
+
+    <div class="dashboard-content">
+      <section id="visao-geral" class="dashboard-head">
+        <div><p class="kicker">Quarta-feira, 16 de setembro</p><h1>O armazém está<br><em>pedindo atenção.</em></h1><p class="head-note">A demanda cresce mais rápido que a capacidade física. Este é o mapa dos sinais que não podem esperar.</p></div>
+        <div class="head-status"><span class="pulse"></span><strong>OPERAÇÃO EM ALERTA</strong><small>4 pontos precisam de ação</small></div>
+      </section>
+
+      <section class="kpi-grid" id="ocupacao" aria-label="Indicadores de operação">
+        <article class="kpi-card danger"><span>Taxa de ocupação</span><strong>87<small>%</small></strong><div class="meter"><i style="width:87%"></i></div><small class="kpi-foot">+12% contra o mês anterior</small></article>
+        <article class="kpi-card warning"><span>Demanda projetada</span><strong>1,32<small>x</small></strong><div class="spark"><i></i><i></i><i></i><i></i><i></i><i></i></div><small class="kpi-foot">Pico esperado em 14 dias</small></article>
+        <article class="kpi-card"><span>Atrasos de recebimento</span><strong>18<small> pedidos</small></strong><div class="kpi-trend">↗ +6 desde ontem</div><small class="kpi-foot">Produtos aguardando entrada</small></article>
+        <article class="kpi-card"><span>Espaço disponível</span><strong>13<small>%</small></strong><div class="meter cool"><i style="width:13%"></i></div><small class="kpi-foot">Limite operacional: 15%</small></article>
+      </section>
+
+      <section class="workspace-grid">
+        <div class="panel alert-panel" id="alertas">
+          <div class="panel-title"><div><p class="kicker">Prioridade imediata</p><h2>Alertas operacionais</h2></div><span class="live-tag">● AO VIVO</span></div>
+          <div class="alert-filters"><a href="#alertas">Todos <b>04</b></a><a href="#ocupacao">Ocupação <b>01</b></a><a href="#recebimento">Recebimento <b>02</b></a><a href="#software">Sistema <b>01</b></a></div>
+          <div class="alert-list">
+            <details class="alert-item critical" open><summary><span class="alert-level">CRÍTICO</span><span><strong>Ocupação acima do limite seguro</strong><small>Setor B / Armazenagem · detectado há 18 min</small></span><b class="chevron">⌄</b></summary><div class="alert-detail"><p>87% do espaço está comprometido. O fluxo de entrada perde flexibilidade e aumenta o deslocamento interno.</p><a href="#matriz">Ver ação recomendada →</a></div></details>
+            <details class="alert-item critical" id="recebimento"><summary><span class="alert-level">CRÍTICO</span><span><strong>18 produtos atrasados no recebimento</strong><small>Docas 02 e 04 · janela vencida</small></span><b class="chevron">⌄</b></summary><div class="alert-detail"><p>O atraso de entrada desorganiza o endereçamento e cria risco de ruptura para pedidos prioritários.</p><a href="#matriz">Ver ação recomendada →</a></div></details>
+            <details class="alert-item warning" id="software"><summary><span class="alert-level">ATENÇÃO</span><span><strong>Baixa visibilidade do estoque</strong><small>Software atual sem visão unificada · 3 fontes divergentes</small></span><b class="chevron">⌄</b></summary><div class="alert-detail"><p>Dados fragmentados impedem uma leitura confiável de giro, demanda e capacidade em uma única tela.</p><a href="#arsenal">Ver stack de resposta →</a></div></details>
+            <details class="alert-item info"><summary><span class="alert-level">MONITORAR</span><span><strong>Demanda acelera acima da capacidade</strong><small>Projeção 2030 · curva de crescimento em alta</small></span><b class="chevron">⌄</b></summary><div class="alert-detail"><p>O descolamento entre crescimento e espaço físico indica a necessidade de atacar o fluxo antes da expansão.</p><a href="#matriz">Ver matriz de ataque →</a></div></details>
+          </div>
+        </div>
+
+        <div class="panel demand-panel"><div class="panel-title"><div><p class="kicker">Leitura de tendência</p><h2>Demanda x capacidade</h2></div><span class="period">2024 — 2030</span></div><div class="big-chart"><span class="chart-y y-top">ALTA</span><span class="chart-y y-bottom">BASE</span><div class="chart-grid"></div><div class="chart-line demand-line"></div><div class="chart-line capacity-line"></div><span class="chart-legend demand-key">Demanda</span><span class="chart-legend capacity-key">Capacidade</span></div><div class="chart-callout"><b>2030</b><span>O gap vira gargalo<br>se nada mudar.</span></div></div>
+      </section>
+
+      <section class="management-grid" id="layout">
+        <div class="panel layout-panel"><div class="panel-title"><div><p class="kicker">Gestão de layout</p><h2>Mapa operacional</h2></div><span class="system-state">ATUALIZADO</span></div><div class="layout-toolbar"><label>Zona <select><option>Armazém completo</option><option>Setor A</option><option>Setor B</option><option>Docas</option></select></label><label>Ordenar <select><option>Maior giro</option><option>Ocupação</option><option>Risco</option></select></label><button type="button">Aplicar visão</button></div><div class="warehouse-map"><div class="map-row"><span>A01</span><i class="free"></i><i class="busy"></i><i class="busy"></i><i class="free"></i><b>EXPEDIÇÃO</b></div><div class="map-row"><span>B02</span><i class="busy critical-cell"></i><i class="busy"></i><i class="free"></i><i class="busy"></i><b>ALTO GIRO</b></div><div class="map-row"><span>C03</span><i class="free"></i><i class="free"></i><i class="busy"></i><i class="free"></i><b>RECEBIMENTO</b></div></div><div class="map-legend"><span><i class="free"></i>Livre 13%</span><span><i class="busy"></i>Ocupado 87%</span><span><i class="critical-cell"></i>Alerta</span></div></div>
+        <div class="panel app-panel"><div class="panel-title"><div><p class="kicker">Power Apps / busca operacional</p><h2>Localizar estoque</h2></div><span class="system-state">ONLINE</span></div><form class="stock-search"><label for="stock-query">SKU, produto ou endereço</label><div><input id="stock-query" type="search" placeholder="Ex.: SKU-2048 ou Rolamento 6204"><button type="submit">Buscar</button></div></form><div class="search-result"><span class="result-icon">✓</span><div><strong>Resultado pronto</strong><small>Busca média &lt; 2s · última consulta há 4s</small></div><b>1,8s</b></div><div class="app-shortcuts"><button type="button">Nova entrada</button><button type="button">Registrar atraso</button></div></div>
+      </section>
+
+      <section class="panel forecast-panel" id="previsao"><div class="panel-title"><div><p class="kicker">Power BI / gestão visual</p><h2>Dashboard de previsão e giro de estoque</h2></div><div class="dashboard-actions"><select aria-label="Período do dashboard"><option>Próximos 30 dias</option><option>Próximos 90 dias</option><option>Visão 2030</option></select><button type="button">Exportar</button></div></div><div class="forecast-layout"><div class="forecast-chart"><div class="forecast-axis"><span>120%</span><span>80%</span><span>40%</span><span>0%</span></div><div class="forecast-grid"></div><div class="forecast-line predicted-line"></div><div class="forecast-line turnover-line"></div><div class="forecast-label predicted-label">Demanda prevista</div><div class="forecast-label turnover-label">Giro de estoque</div><div class="forecast-months"><span>SET</span><span>OUT</span><span>NOV</span><span>DEZ</span><span>JAN</span><span>FEV</span></div></div><div class="forecast-stats"><div><span>Giro médio</span><strong>4,8x</strong><small>+28% no período</small></div><div><span>Risco de ruptura</span><strong class="yellow-text">12 SKUs</strong><small>ação recomendada</small></div><div><span>Pico de demanda</span><strong>14 dias</strong><small>planejar capacidade</small></div></div></div></section>
+
+      <section class="panel arsenal-panel" id="arsenal"><div class="panel-title"><div><p class="kicker">Software e gestão visual</p><h2>O Arsenal Tecnológico: Ecossistema Microsoft</h2></div><span class="system-state">MAPEADO</span></div><div class="arsenal-grid"><article><span class="tech-icon">▦</span><div><h3>Power BI</h3><p>Dashboard visual para acompanhar demanda, ocupação e alertas em tempo real.</p></div><b>01</b></article><article><span class="tech-icon">⌁</span><div><h3>Power Automate</h3><p>Fluxos automáticos para escalar atrasos e acionar o responsável certo.</p></div><b>02</b></article><article><span class="tech-icon">◈</span><div><h3>Azure + IoT</h3><p>Dados do armazém conectados a uma camada única de inteligência operacional.</p></div><b>03</b></article><article><span class="tech-icon">✓</span><div><h3>Teams</h3><p>Gestão visual compartilhada para decisão rápida entre operação e liderança.</p></div><b>04</b></article></div></section>
+
+      <section class="panel matrix-panel" id="matriz"><div class="panel-title"><div><p class="kicker">Do alerta para a ação</p><h2>Matriz de ataque</h2></div><span class="system-state orange-state">4 FRENTES</span></div><div class="matrix-table"><div class="matrix-row matrix-head"><span>Risco identificado</span><span>Impacto</span><span>Resposta TechAlerta</span><span>Prioridade</span></div><div class="matrix-row"><span><b class="row-dot red"></b>Ocupação crítica</span><span>Fluxo travado</span><span>Reorganizar endereçamento por giro</span><strong class="priority p1">P1 / AGORA</strong></div><div class="matrix-row"><span><b class="row-dot red"></b>Atraso nas docas</span><span>Ruptura e retrabalho</span><span>Acionar recebimento e rastrear janela</span><strong class="priority p1">P1 / AGORA</strong></div><div class="matrix-row"><span><b class="row-dot yellow"></b>Dados fragmentados</span><span>Decisão lenta</span><span>Unificar leitura no Power BI</span><strong class="priority p2">P2 / 7 DIAS</strong></div><div class="matrix-row"><span><b class="row-dot blue"></b>Demanda crescente</span><span>Gargalo futuro</span><span>Simular cenários para 2030</span><strong class="priority p3">P3 / PLANO</strong></div></div></section>
+    </div>
+  </main>
+  <footer><span>TECHALERTA / OPERATIONAL INTELLIGENCE</span><span>01 — O PROBLEMA</span></footer>
+</body>
+</html>
